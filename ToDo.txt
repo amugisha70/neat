@@ -16,6 +16,5 @@ CMC statement
 * Tebakulimba
 BBI pre-IPO
 * Najera stairs stickers
-* Peter paper
-* Soultouch
-* Google form
+* School Mgt System
+ * ipbc emails
