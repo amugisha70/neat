@@ -16,8 +16,5 @@ CMC statement
 * Tebakulimba
 BBI pre-IPO
 * Najera stairs stickers
-* Gilbert quote
-* Budding Stars content
-* Royal Lending status; Admin fees
-* Peter paper
-* Soultouch
+* School Mgt System
+ * ipbc emails
