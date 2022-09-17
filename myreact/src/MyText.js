@@ -1,22 +1,35 @@
 import React from 'react';
+import { useState } from 'react';
 
-class MyText extends React.Component {
-    constructor (){
-        super();
-        this.state = {
-            color: "red",
-            type: 'ford',
-            brand: 'jeep'
-        };
-    }
-    MyBtn =()=> this.setState({color: "blue"})
-    render () {
-        return (
-             <>
-                <p>The color is {this.state.color}</p>
-                <button onClick={this.MyBtn}>change color</button>
-            </>);
-        }
+function NameShow (props){
+    const myname = props.myname;
+    return (
+        <>
+        <h1>{myname}, PRAISE THE LORD!</h1>
+        </>
+    );
 }
-export default MyText; 
 
+function MyText () {
+
+    const [name1 , setName] = useState("");
+    const [val1, setVal] = useState(false);
+    
+    const NameShow1 = (event) => {
+       event.preventDefault();
+        setVal(true);
+    }
+    return (
+        <>
+            <form onSubmit={NameShow1}>
+                <label>What is Your Name?</label>
+                <input type='text'  value={name1} onChange={(e)=>setName(e.target.value)}></input>
+                <input type="submit"></input>
+                
+            </form>
+            { val1 && <div><NameShow myname={name1} /></div>}
+            
+        </>
+    )
+}
+export default MyText;
