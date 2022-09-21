@@ -1,26 +1,44 @@
 import React from "react";
-//import { Component } from "react";
 
-class MyApp extends React.Component {
-    constructor(){
-        super();
-        this.state = {favcolor: 'red'};
+import { useState } from "react";
+
+function MyDisplay (props){
+    const myname = props.myname;
+    return (
+        <>
+            <h1> {myname}, PRAISE THE LORD! </h1> 
+        </>
+    )
+}
+
+function MyApp () {
+    const [name1, setName] = useState('');
+    const [status1, setStatus] =useState(false);
+    const [name3, setName3] = useState('');
+
+    const displayName = (event) => {
+        event.preventDefault();
+        setStatus(true);
+        setName3(name1);
+
     }
-    
-    componentDidMount () {
-        setTimeout(() => this.setState({favcolor: "green"}), 1500);
-    }
-    componentDidUpdate (){
-        document.getElementById("div222").innerText = "The favorite color has been updated to "+ this.state.favcolor; 
-    }
-    render(){
-        return (
-            <>
-                <h1>Changing the Fav Color</h1>
-                <p>{this.state.favcolor}</p>
-                <div id="div222"></div>
-            </>
-        )
-    };
+
+    var name2;
+    return (
+        <>
+            <form onSubmit={displayName}>
+                <input 
+                    type='text'
+                    value={name2}
+                    onChange={e => setName(e.target.value)}>
+
+                </input>
+                <input type='submit' ></input>
+            </form>
+
+            {status1 && <MyDisplay myname={name3} />}
+        </>
+    )
+
 }
 export default MyApp;

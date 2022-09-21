@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 //import MyApp from './MyApp';
-import MyText from './MyText';
-//import MyApp from './MyApp';
+//import MyText from './MyText';
+import MyApp from './MyApp';
 //import MyGoal from './MyGoal';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <MyText />
+    <MyApp />
    
   </React.StrictMode>
 );
