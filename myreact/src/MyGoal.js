@@ -1,37 +1,31 @@
 import React from "react";
-var x =1;
 
-function MyCars(props) {
-    
-    
-    return (
-        <>
-            <li>{x++} and {props.cars1}</li>
-        </>
-    );
-}
- 
 function MyGoal (){
-
-    const cars = [
-        { id: 1, brand:'BMW'},
-        { id: 2, brand: 'Benz'},
-        { id:3, brand: 'Ford'}
-        ];
-
-   
-    return (
+    let day;
+    switch (new Date().getDay()){
+        case 0:
+            day = 'Sunday';
+            break;
+        case 1:
+            day = 'Monday';
+            break;
+        case 2:
+            day = 'Tuesday';
+            break;
+        case 3: 
+            day = 'Wednesday';
+            break;
+        default:
+            day = 'just another day';
+    }
+    
+    
+        return(
         <>
-        
-            <ul>
-                {cars.map((car)=>
-                
-                <MyCars key ={car.id}  cars1={car.brand}/>
-            )
-            }  
-            </ul>
+            
+            <h1>Today is {day}</h1> 
+            <p id="onc"></p>   
         </>
-    );
-
+    )
 }
 export default MyGoal;
